@@ -1,0 +1,131 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<title>Расписание занятий — Life is Dance, Королёв</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+.pwrap{padding:30px 0 40px}
+.notice{background:var(--l3);border:1.5px solid #D4E7B0;border-radius:16px;padding:18px 24px;display:flex;align-items:center;gap:14px;font-size:16px;color:#3B4A28;margin:26px 0 8px}
+.notice .ic{font-size:24px}.notice b{color:#2C3D18}
+.filters{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:46px 0 12px}
+.filters button{background:#fff;border:1.5px solid var(--line);color:#41502F;font-size:16px;font-weight:700;padding:12px 26px;border-radius:40px;cursor:pointer;transition:.22s;font-family:inherit}
+.filters button:hover{border-color:var(--g);color:var(--g2)}
+.filters button.on{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 10px 24px rgba(124,183,51,.3)}
+.sched{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.sc{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 12px 34px rgba(70,100,20,.05);display:flex;flex-direction:column}
+.sc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.sc .nm{font-size:21px;font-weight:800;letter-spacing:-.4px;line-height:1.2}
+.sc .stt{font-size:12px;font-weight:800;padding:5px 12px;border-radius:20px;white-space:nowrap;flex:none}
+.stt.set{background:#E7F5D0;color:#5C8A26}
+.stt.pro{background:#EAEFE0;color:#6B7A5B}
+.stt.cl{background:#F0E7E7;color:#A57B7B}
+.sc .teacher{display:flex;align-items:center;gap:11px;margin-top:20px}
+.sc .av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;flex:none}
+.av.c1{background:#8CC63F}.av.c2{background:#F0B429}.av.c3{background:#6FA82C}.av.c4{background:#E0894B}.av.c5{background:#5FA88C}.av.c6{background:#B27BD0}
+.sc .tinfo .tl{font-size:12px;color:#9AA88B;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.sc .tinfo .tn{font-size:16px;font-weight:700;color:var(--ink)}
+.sc .tags{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.sc .tg{font-size:13px;font-weight:700;padding:6px 13px;border-radius:20px;background:var(--l1);color:#5A6B48}
+.sc .book{margin-top:22px;text-align:center;font-weight:800;font-size:15px;color:var(--g2);border:2px solid #DCEBC4;border-radius:12px;padding:12px;transition:.2s;cursor:pointer}
+.sc .book:hover{background:var(--g);color:#fff;border-color:var(--g)}
+.legend{display:flex;gap:22px;justify-content:center;margin-top:30px;flex-wrap:wrap;font-size:14px;color:var(--mut);font-weight:600}
+.legend span{display:flex;align-items:center;gap:7px}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+@media (max-width:900px){
+  .sched{grid-template-columns:1fr;gap:16px}
+  .legend{gap:12px 16px;font-size:13px}
+}
+</style></head><body>
+
+<div class="bar"><span>📍 г. Королёв, ул. Болдырева, 3</span><span>🕒 Пн-Пт 15:00-22:00, Сб 10:00-17:00</span><span>📞 <b>+7 915 033-32-21</b></span></div>
+
+<header>
+  <a href="index.html" class="logo"><img src="site_images/logo.png" alt="Life is Dance"></a>
+  <nav>
+    <a href="napravleniya.html">Направления</a>
+    <a href="raspisanie.html" class="active">Расписание</a>
+    <a href="price.html">Цены</a>
+    <a href="meropriyatiya.html">Мероприятия</a>
+    <a href="vakansii.html">Вакансии</a>
+    <a href="index.html#contacts">Контакты</a>
+  </nav>
+  <div class="htop"><div class="phone">+7 915 033-32-21</div><a href="#lead" class="btn">Записаться</a></div>
+</header>
+
+<div class="phero">
+  <div class="blob bA"></div><div class="blob bB"></div>
+  <div class="crumbs"><a href="index.html">Главная</a> · Расписание</div>
+  <div class="ptitle">Расписание и <span>педагоги</span></div>
+  <div class="pdesc">Более 30 групп для детей, подростков и взрослых. Выберите направление, а точное время и свободные места подскажет администратор.</div>
+</div>
+
+<div class="wrap pwrap">
+  <div class="notice rv"><span class="ic">🔥</span><span><b>Идёт набор в группы нового сезона.</b> Актуальное время занятий по дням недели и наличие мест уточняйте у администратора: +7 915 033-32-21. Запишем на удобный слот.</span></div>
+
+  <div class="filters" data-tabs="#schedscope">
+    <button data-tab="all" class="on">Все группы</button>
+    <button data-tab="adult">Взрослые</button>
+    <button data-tab="kids">Дети и подростки</button>
+    <button data-tab="style">Коллектив «Стайл»</button>
+  </div>
+  <div class="legend rv">
+    <span><i style="background:#8CC63F"></i>Идёт набор</span>
+    <span><i style="background:#B8C4A8"></i>Продолжающие (PRO)</span>
+    <span><i style="background:#C9A5A5"></i>Закрытая группа</span>
+  </div>
+
+  <div id="schedscope">
+    <div class="sched" id="schedList"></div>
+  </div>
+</div>
+
+<div class="ctawrap" id="lead" style="padding-top:80px"><div class="wrap">
+  <div class="cta rv zoom">
+    <div class="cb" style="position:absolute;width:360px;height:360px;background:rgba(255,255,255,.12);border-radius:46% 54% 60% 40%/52% 44% 56% 48%;bottom:-120px;left:-60px;animation:morph 12s ease-in-out infinite"></div>
+    <div>
+      <h2 style="font-size:44px;font-weight:900;letter-spacing:-1px;line-height:1.05;position:relative;z-index:2">Не знаете, что выбрать?</h2>
+      <p style="font-size:20px;color:#F1F8E4;margin-top:18px;line-height:1.5;position:relative;z-index:2">Оставьте заявку — подберём направление, педагога и удобное время под ваш график. Первое занятие за 500 ₽.</p>
+    </div>
+    <form class="form lidform" data-subject="Заявка на пробное (расписание) — Life is Dance" style="background:#fff;border-radius:24px;padding:34px;position:relative;z-index:2">
+      <div class="lf-body">
+        <div class="fh" style="font-size:24px;font-weight:800;color:var(--ink)">Подобрать группу</div>
+        <div class="lf-chosen" style="display:none;background:#EDF6DC;border:1px solid #D4E7B0;border-radius:11px;padding:11px 15px;margin-top:14px;font-size:15px;color:#3B4A28">Вы записываетесь на: <b></b></div>
+        <div class="field" style="margin-top:15px"><label style="font-size:14px;font-weight:700;color:#46543A">Ваше имя</label><input name="Имя" class="inp" style="width:100%;color:#1A2410;font-family:inherit;outline:none" placeholder="Как к вам обращаться"></div>
+        <div class="field" style="margin-top:15px"><label style="font-size:14px;font-weight:700;color:#46543A">Телефон</label><input name="Телефон" type="tel" class="inp" style="width:100%;color:#1A2410;font-family:inherit;outline:none" placeholder="+7 (___) ___-__-__"></div>
+        <div class="lf-err" style="display:none;color:#C0574F;font-size:13px;margin-top:10px;font-weight:600"></div>
+        <button type="submit" class="subm" style="width:100%;border:0;cursor:pointer;font-family:inherit;margin-top:22px;background:var(--g);color:#fff;font-size:19px;font-weight:800;padding:17px;border-radius:13px">Записаться →</button>
+        <div class="pnote" style="font-size:12px;color:#8A9678;text-align:center;margin-top:11px">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</div>
+      </div>
+      <div class="lf-ok" style="display:none;text-align:center;padding:24px 8px">
+        <div style="font-size:52px">✅</div>
+        <div style="font-size:23px;font-weight:800;color:#1A2410;margin-top:10px">Заявка принята!</div>
+        <div style="font-size:16px;color:#65735A;margin-top:8px;line-height:1.5">Мы перезвоним в ближайшее время и подберём удобное время занятий.</div>
+      </div>
+    </form>
+  </div>
+</div></div>
+
+<footer id="contacts"><div class="wrap"><div class="fgrid">
+  <div><div class="lg"><img src="site_images/logo.png" alt="Life is Dance"></div>
+    <p>Самая крупная и современная танцевальная студия в Королёве. Танцы для детей, взрослых и старшего поколения с 2011 года.</p>
+    <div class="soc"><span>VK</span><span>Telegram</span><span>WhatsApp</span><span>YouTube</span></div>
+  </div>
+  <div><h4>Навигация</h4>
+    <a class="fl" href="napravleniya.html">Направления</a>
+    <a class="fl" href="raspisanie.html">Расписание</a>
+    <a class="fl" href="price.html">Цены</a>
+    <a class="fl" href="meropriyatiya.html">Мероприятия</a>
+    <a class="fl" href="vakansii.html">Вакансии</a>
+  </div>
+  <div><h4>Контакты</h4>
+    <span class="fl">г. Королёв, ул. Болдырева, 3</span>
+    <span class="fl">+7 915 033-32-21</span>
+    <span class="fl">+7 916 107-21-45</span>
+    <span class="fl">Life-is-dance@mail.ru</span>
+    <span class="fl">Пн-Пт 15:00-22:00, Сб 10:00-17:00</span>
+  </div>
+</div></div></footer>
+
+<script src="data.js"></script>
+<script>renderSchedule(document.getElementById('schedList'), lidLoad());</script>
+<script src="app.js"></script>
+</body></html>

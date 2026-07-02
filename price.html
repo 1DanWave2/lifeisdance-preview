@@ -1,0 +1,153 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<title>Цены — Life is Dance, Королёв</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+.pwrap{padding:30px 0 40px}
+.notice{background:var(--l3);border:1.5px solid #D4E7B0;border-radius:16px;padding:18px 24px;display:flex;align-items:center;gap:14px;font-size:16px;color:#3B4A28;margin:30px 0 10px}
+.notice .ic{font-size:24px}
+.notice b{color:#2C3D18}
+/* тарифы */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.plan{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:38px 32px;position:relative;box-shadow:0 14px 40px rgba(70,100,20,.06)}
+.plan.hit{border:2px solid var(--g);box-shadow:0 24px 55px rgba(124,183,51,.2);transform:scale(1.03)}
+.plan .rib{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--g);color:#fff;font-size:13px;font-weight:800;padding:6px 18px;border-radius:20px;letter-spacing:.5px;white-space:nowrap}
+.plan .pn{font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--g2)}
+.plan .pq{font-size:44px;font-weight:900;letter-spacing:-1.5px;margin-top:8px}
+.plan .pq small{font-size:18px;font-weight:700;color:var(--mut)}
+.plan .pp{font-size:16px;color:#7C8A6B;margin-top:6px;font-weight:600}
+.plan ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.plan li{font-size:16px;color:#41502F;display:flex;gap:10px;align-items:flex-start}
+.plan li::before{content:"✓";color:var(--g2);font-weight:900;flex:none}
+.plan .pbtn{margin-top:26px;display:block;text-align:center}
+/* таблицы цен */
+.pcat{margin-top:66px}
+.pcat-h{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.pcat-h .em{font-size:32px}
+.pcat-h h3{font-size:30px;font-weight:900;letter-spacing:-.8px}
+.ptable{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 14px 40px rgba(70,100,20,.05)}
+.prow{display:grid;grid-template-columns:1fr 160px 170px;gap:16px;padding:18px 28px;align-items:center;border-bottom:1px solid #F0F5E6}
+.prow:last-child{border-bottom:none}
+.prow:nth-child(even){background:#FBFDF7}
+.prow.head{background:var(--l1);font-size:13px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#6B7A5B}
+.prow .nm{font-size:17px;font-weight:700;color:var(--ink)}
+.prow .tm{font-size:15px;color:var(--mut);font-weight:600}
+.prow .pr{font-size:19px;font-weight:800;color:var(--g3);text-align:right}
+.prow .pr.ask{color:#A9B795;font-size:15px;font-weight:700}
+.pcat.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pcat.two .ptable{margin:0}
+.pnote-box{margin-top:40px;background:var(--dark);color:#CBDBAF;border-radius:22px;padding:34px 38px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pnote-box .pi{display:flex;gap:12px;align-items:flex-start}
+.pnote-box .pi .e{font-size:24px}
+.pnote-box .pi b{color:#fff;display:block;font-size:16px;margin-bottom:3px}
+.pnote-box .pi span{font-size:14px;line-height:1.5}
+@media (max-width:900px){
+  .plans{grid-template-columns:1fr;gap:16px}
+  .plan.hit{transform:none}
+  .plan{padding:32px 26px}
+  .plan .pq{font-size:38px}
+  .pcat.two{grid-template-columns:1fr;gap:16px}
+  .pcat{margin-top:44px}
+  .pcat-h h3{font-size:24px}
+  .prow{grid-template-columns:1.5fr auto;gap:8px;padding:14px 16px}
+  .prow .tm{display:none}
+  .prow.head div:nth-child(2){display:none}
+  .prow .nm{font-size:16px}
+  .pnote-box{grid-template-columns:1fr;gap:16px;padding:26px}
+}
+</style></head><body>
+
+<div class="bar"><span>📍 г. Королёв, ул. Болдырева, 3</span><span>🕒 Пн-Пт 15:00-22:00, Сб 10:00-17:00</span><span>📞 <b>+7 915 033-32-21</b></span></div>
+
+<header>
+  <a href="index.html" class="logo"><img src="site_images/logo.png" alt="Life is Dance"></a>
+  <nav>
+    <a href="napravleniya.html">Направления</a>
+    <a href="raspisanie.html">Расписание</a>
+    <a href="price.html" class="active">Цены</a>
+    <a href="meropriyatiya.html">Мероприятия</a>
+    <a href="vakansii.html">Вакансии</a>
+    <a href="index.html#contacts">Контакты</a>
+  </nav>
+  <div class="htop"><div class="phone">+7 915 033-32-21</div><a href="#lead" class="btn">Записаться</a></div>
+</header>
+
+<div class="phero">
+  <div class="blob bA"></div><div class="blob bB"></div>
+  <div class="crumbs"><a href="index.html">Главная</a> · Цены</div>
+  <div class="ptitle">Цены и <span>абонементы</span></div>
+  <div class="pdesc">Пробное занятие всего за 500 ₽. Гибкие абонементы для детей и взрослых, скидка −10% на второе направление.</div>
+</div>
+
+<div class="wrap pwrap">
+  <div class="notice rv"><span class="ic">💬</span><span><b>Актуальную стоимость абонементов уточняйте у администратора</b> по телефону +7 915 033-32-21 — назовём точную цену и подберём удобный формат под ваш запрос.</span></div>
+
+  <!-- Взрослые тарифы -->
+  <div class="pcat">
+    <div class="pcat-h rv"><span class="em">💃</span><h3>Взрослые направления</h3></div>
+    <div class="plans" id="tariffs"></div>
+  </div>
+
+  <!-- Категории цен (рендерятся из data.js, редактируются в admin.html) -->
+  <div id="priceCats"></div>
+
+  <!-- Условия (из data.js) -->
+  <div class="pnote-box rv" id="conditions"></div>
+</div>
+
+<div class="ctawrap" id="lead" style="padding-top:70px"><div class="wrap">
+  <div class="cta rv zoom">
+    <div class="cb" style="position:absolute;width:360px;height:360px;background:rgba(255,255,255,.12);border-radius:46% 54% 60% 40%/52% 44% 56% 48%;bottom:-120px;left:-60px;animation:morph 12s ease-in-out infinite"></div>
+    <div>
+      <h2 style="font-size:44px;font-weight:900;letter-spacing:-1px;line-height:1.05;position:relative;z-index:2">Узнайте точную стоимость за 1 минуту</h2>
+      <p style="font-size:20px;color:#F1F8E4;margin-top:18px;line-height:1.5;position:relative;z-index:2">Оставьте номер — перезвоним, назовём цену вашего направления и запишем на пробное за 500 ₽.</p>
+    </div>
+    <form class="form lidform" data-subject="Расчёт стоимости — Life is Dance" style="background:#fff;border-radius:24px;padding:34px;position:relative;z-index:2">
+      <div class="lf-body">
+        <div class="fh" style="font-size:24px;font-weight:800;color:var(--ink)">Рассчитать стоимость</div>
+        <div class="lf-chosen" style="display:none;background:#EDF6DC;border:1px solid #D4E7B0;border-radius:11px;padding:11px 15px;margin-top:14px;font-size:15px;color:#3B4A28">Направление: <b></b></div>
+        <div class="field" style="margin-top:15px"><label style="font-size:14px;font-weight:700;color:#46543A">Ваше имя</label><input name="Имя" style="width:100%;margin-top:6px;border:1.5px solid #DFE8CE;border-radius:12px;padding:15px 16px;font-size:16px;color:#1A2410;background:#FBFDF7;font-family:inherit;outline:none" placeholder="Как к вам обращаться"></div>
+        <div class="field" style="margin-top:15px"><label style="font-size:14px;font-weight:700;color:#46543A">Телефон</label><input name="Телефон" type="tel" style="width:100%;margin-top:6px;border:1.5px solid #DFE8CE;border-radius:12px;padding:15px 16px;font-size:16px;color:#1A2410;background:#FBFDF7;font-family:inherit;outline:none" placeholder="+7 (___) ___-__-__"></div>
+        <div class="lf-err" style="display:none;color:#C0574F;font-size:13px;margin-top:10px;font-weight:600"></div>
+        <button type="submit" class="subm" style="width:100%;border:0;cursor:pointer;font-family:inherit;margin-top:22px;background:var(--g);color:#fff;font-size:19px;font-weight:800;padding:17px;border-radius:13px">Узнать цену →</button>
+        <div class="pnote" style="font-size:12px;color:#8A9678;text-align:center;margin-top:11px">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</div>
+      </div>
+      <div class="lf-ok" style="display:none;text-align:center;padding:24px 8px">
+        <div style="font-size:52px">✅</div>
+        <div style="font-size:23px;font-weight:800;color:#1A2410;margin-top:10px">Заявка принята!</div>
+        <div style="font-size:16px;color:#65735A;margin-top:8px;line-height:1.5">Перезвоним и назовём точную стоимость вашего направления.</div>
+      </div>
+    </form>
+  </div>
+</div></div>
+
+<footer id="contacts"><div class="wrap"><div class="fgrid">
+  <div><div class="lg"><img src="site_images/logo.png" alt="Life is Dance"></div>
+    <p>Самая крупная и современная танцевальная студия в Королёве. Танцы для детей, взрослых и старшего поколения с 2011 года.</p>
+    <div class="soc"><span>VK</span><span>Telegram</span><span>WhatsApp</span><span>YouTube</span></div>
+  </div>
+  <div><h4>Навигация</h4>
+    <a class="fl" href="napravleniya.html">Направления</a>
+    <a class="fl" href="raspisanie.html">Расписание</a>
+    <a class="fl" href="price.html">Цены</a>
+    <a class="fl" href="meropriyatiya.html">Мероприятия</a>
+    <a class="fl" href="vakansii.html">Вакансии</a>
+  </div>
+  <div><h4>Контакты</h4>
+    <span class="fl">г. Королёв, ул. Болдырева, 3</span>
+    <span class="fl">+7 915 033-32-21</span>
+    <span class="fl">+7 916 107-21-45</span>
+    <span class="fl">Life-is-dance@mail.ru</span>
+    <span class="fl">Пн-Пт 15:00-22:00, Сб 10:00-17:00</span>
+  </div>
+</div></div></footer>
+
+<script src="data.js"></script>
+<script>
+  var D = lidLoad();
+  renderTariffs(document.getElementById('tariffs'), D);
+  renderPriceCats(document.getElementById('priceCats'), D);
+  renderConditions(document.getElementById('conditions'), D);
+</script>
+<script src="app.js"></script>
+</body></html>

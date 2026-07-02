@@ -1,0 +1,53 @@
+# ===== Life is Dance — безопасность и оптимизация (Apache / TimeWeb) =====
+
+# --- Принудительный HTTPS ---
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# --- Заголовки безопасности ---
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # CSP: включить и протестировать после переезда (может влиять на встройки RuTube/Яндекс).
+  # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src https://rutube.ru https://*.rutube.ru https://yandex.ru https://*.yandex.ru; connect-src 'self' https://formsubmit.co; font-src 'self' data:; frame-ancestors 'self'"
+</IfModule>
+
+# --- Запрет просмотра списка файлов в папках ---
+Options -Indexes
+
+# --- Защита служебных файлов ---
+<FilesMatch "\.(htaccess|htpasswd|json|md)$">
+  Require all denied
+</FilesMatch>
+
+# --- Кэширование статики (ускорение) ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>
+
+# --- Сжатие (gzip) ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Свои страницы ошибок (опционально) ---
+# ErrorDocument 404 /index.html
+
+# ===== Пароль на админку =====
+# Когда зальёте admin.html — раскомментируйте и создайте .htpasswd (в панели TimeWeb или командой htpasswd):
+# <Files "admin.html">
+#   AuthType Basic
+#   AuthName "Только для администратора"
+#   AuthUserFile "/home/ПОЛЬЗОВАТЕЛЬ/lifeisdance.ru/.htpasswd"
+#   Require valid-user
+# </Files>
