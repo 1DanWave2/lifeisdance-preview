@@ -269,6 +269,10 @@ footer h4{color:#fff;font-size:16px;font-weight:800;margin-bottom:16px}
   .cta h2{font-size:28px!important}
   .cta p{font-size:17px!important}
   .form{padding:26px}
+  .wrap{max-width:100%}
+  .cta>*{min-width:0}
+  .peds>*,.ngrid>*,.events>*,.vgrid>*{min-width:0}
+  img{max-width:100%}
 }
 @media (max-width:520px){
   .peds{grid-template-columns:1fr}
