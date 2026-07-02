@@ -8,7 +8,8 @@
   --line:#EAF2DA; --yel:#F0B429;
 }
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,'SF Pro Display',Helvetica,Arial,sans-serif;background:#fff;color:var(--ink);width:1440px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{overflow-x:hidden;width:100%}
+body{font-family:-apple-system,'SF Pro Display',Helvetica,Arial,sans-serif;background:#fff;color:var(--ink);width:1440px;max-width:100%;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{display:block}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1320px;margin:0 auto;padding:0 60px;position:relative}
@@ -233,8 +234,8 @@ footer h4{color:#fff;font-size:16px;font-weight:800;margin-bottom:16px}
   header{padding:14px 20px}
   body.scrolled header{padding:12px 20px}
   .burger{display:flex}
-  nav{position:fixed;top:0;right:0;height:100dvh;width:78%;max-width:330px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:84px 26px 26px;box-shadow:-12px 0 44px rgba(0,0,0,.16);transform:translateX(105%);transition:transform .32s cubic-bezier(.2,.7,.2,1);z-index:60;overflow-y:auto}
-  nav.open{transform:translateX(0)}
+  nav{position:fixed;top:0;right:0;height:100dvh;width:78%;max-width:330px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:84px 26px 26px;box-shadow:-12px 0 44px rgba(0,0,0,.16);transform:translateX(100%);visibility:hidden;transition:transform .32s cubic-bezier(.2,.7,.2,1),visibility .32s;z-index:60;overflow-y:auto}
+  nav.open{transform:translateX(0);visibility:visible}
   nav a{font-size:19px;padding:15px 0;width:100%;border-bottom:1px solid #EEF3E5;color:#243516}
   nav a::after{display:none}
   .htop .phone{display:none}
